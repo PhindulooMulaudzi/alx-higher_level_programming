@@ -3,8 +3,9 @@
 
 def print_sorted_dictionary(a_dictionary):
     """
-    Prints a dictionary by sorted_keys
+    Print a dictionary by sorted_keys
     """
-    sorted_keys = list(a_dictionary.sorted_keys()).sort()
-    for key in sorted_keys:
+    keys = list(a_dictionary.keys())
+    keys.sort()
+    for key in keys:
         print("{}: {}".format(key, a_dictionary[key]))

@@ -83,7 +83,7 @@ class Rectangle:
         """Return a new rectangle with equal height and size.
 
         Args:
-            size : width and height of the rectangle.
+            size (int): width and height of the rectangle.
         """
         return (cls(size, size))
 

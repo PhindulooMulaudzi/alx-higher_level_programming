@@ -1,13 +1,13 @@
 #!/usr/bin/node
 const dict = require ('./101-data').dict;
 
-const newDict = Object.fromEntries (
-  [...new Set (Object.values (dict))].map (value => [
-    value,
-    Object.entries (dict)
-      .filter (([key, dictValue]) => dictValue === value)
-      .map (([key]) => key),
-  ])
-);
+const newDict = new Map ();
 
-console.log (newDict);
+Object.entries (dict).forEach (([key, value]) => {
+  if (!newDict.has (value)) {
+    newDict.set (value, []);
+  }
+  newDict.get (value).unshift (key);
+});
+
+console.log (Object.fromEntries (newDict));

@@ -10,7 +10,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
     cursor.execute('SELECT cities.name FROM cities JOIN states ON\
     cities.state_id = states.id WHERE states.name = %s\
-    ORDER BY cities.id', (argv[4], ))
+    ORDER BY cities.id ASC', (argv[4], ))
 
     queried = cursor.fetchall()
     countula = 0
